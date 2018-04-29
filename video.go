@@ -19,7 +19,7 @@
               fmt.Println(err)
               return
           }
-          
+
 
           drone.On(tello.ConnectedEvent, func(data interface{}) {
               fmt.Println("Connected")
@@ -45,4 +45,10 @@
       )
 
       robot.Start()
+
+      cmd := exec.Command("python", "./visualSend.py")
+
+      out, err := cmd.CombinedOutput()
+      if err != nil { fmt.Println(err); }
+      fmt.Println(string(out))
   }
