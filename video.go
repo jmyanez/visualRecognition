@@ -46,7 +46,7 @@
 
       robot.Start()
 
-      cmd := exec.Command("python", "./visualSend.py")
+      cmd := exec.Command("python", "./print.py")
 
       out, err := cmd.CombinedOutput()
       if err != nil { fmt.Println(err); }
