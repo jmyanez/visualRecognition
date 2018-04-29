@@ -11,4 +11,4 @@ with open('./dog.jpg', 'rb') as images_file:
         parameters = json.dumps({
             'classifier_ids': ["dogs_908544050"]
         }))
-print(json.dumps(classes, indent=2))
+print(json.dumps(classes, indent=2))#
