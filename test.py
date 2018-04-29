@@ -7,10 +7,6 @@ visual_recognition = VisualRecognitionV3(
     api_key='3995db77bd70aa498157544096c84c5741b30668')
 
 
-with open('./apie.jpg', 'rb') as images_file:
-    classes = visual_recognition.classify(
-        images_file,
-        parameters = json.dumps({
-            'classifier_ids': ["humans_718172774"]
-        }))
-print(json.dumps(classes, indent=2))
+with open('./pedestrian.jpg', 'rb') as images_file:
+    faces = visual_recognition.detect_faces(images_file)
+print(json.dumps(faces, indent=2))
